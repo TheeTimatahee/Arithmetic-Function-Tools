@@ -29,7 +29,9 @@ def secToHMS(n):
 def makeY(n,x):
     y = []
     for i in x:
-        y.append(#Replace this portion of the code with whatever arithmetic function you wish to map to a graph#)
+        f = #Replace this with some arithmetic function from numberTheoryTools.py
+        # Example: f = ntt.tau(i)
+        y.append(f)
     return y
 startTime = float(time.time())
 
@@ -37,7 +39,7 @@ n = 1000
 x = list(range(1,(n+1)))
 y = makeY(n,x)
 
-trace = go.Scatter(x=x,y=x,name='YEET')
+trace = go.Scatter(x=x,y=x,name='Graph')
 data = [trace]
 layout = dict(title='Number Theory Graph',xaxis=dict(title='n'),yaxis=dict(title='f(n)'))
 fig = dict(data=data,layout=layout)
