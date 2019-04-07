@@ -93,6 +93,22 @@ def tau(n):
     """Returns the number of positive factors of n"""
     return len(positiveFactors(n))
 
+def primeNumbersAlt(n):
+    """Alternative algorithm for find the prime numbers between [2,n],
+    though much more inefficient than the Sieve of Eratosthenes"""
+    r = list(range(2,(n+1)))
+    ps = []
+    # Loop through each integer in range [2,n]
+    for i in r:
+        # Determines the number of factors it has
+        factors = tau(i)
+        # Checks if the number of factors it has is 2
+        if(factors == 2):
+            # If it is, than it is a prime number so add it to the list,
+            # since primes number only have 2 factors: 1 and itself
+            ps.append(i)
+    return ps
+
 def sigma(n):
     """Returns the sum of the positive factors of n"""
     return sum(positiveFactors(n))
@@ -136,6 +152,23 @@ def phi(n):
             # Increments num if it is
             num += 1
     return num
+
+def primeNumbersAlt2(n):
+    """Alternative algorithm for find the prime numbers between [2,n].
+    Again, much more inefficient than the Sieve of Eratosthenes"""
+    r = list(range(2,(n+1)))
+    ps = []
+    # Loop through each integer in range [2,n]
+    for i in r:
+        # Determines the number of numbers in the range [2,i] that are relatively prime with i
+        relativelyPrimeNumbers = phi(i)
+        # Checks if the number of numbers in the range [2,i] that are relatively prime with i
+        # is one less than i
+        if((relativelyPrimeNumbers+1) == i):
+            # If it is, than it is a prime number so add it to the list,
+            # since the only number not relatively prime with i must be i
+            ps.append(i)
+    return ps
 
 def phiAlt(n):
     """Returns the *sum* of integers <= n, such that
