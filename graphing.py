@@ -35,7 +35,7 @@ def makeY(n,x):
     return y
 startTime = float(time.time())
 
-n = 1000
+n = int(input("n = "))
 x = list(range(1,(n+1)))
 y = makeY(n,x)
 
