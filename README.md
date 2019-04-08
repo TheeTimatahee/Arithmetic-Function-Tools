@@ -1,4 +1,6 @@
 # Arithmetic-Function-Tools
+Submission for CuseHacks2019
+
 Various functions designed to replicate the behavior of various arithmetic functions. 
 I'd recommend reading this article if you're unfamiliar with arithmetic functions: https://en.wikipedia.org/wiki/Arithmetic_function
 
